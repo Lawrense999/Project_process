@@ -1,3 +1,7 @@
+// 작성자: 성준호
+// contact: twg0456@naver.com
+// writeday: 2022-05-27 
+
 const http = require('http');
 const express = require('express');
 const app = express();
