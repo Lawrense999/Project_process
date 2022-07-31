@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!DOCTYPE html>
+    <html>
+    <!-- Mirrored from www.tourdaum.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Jul 2022 15:00:15 GMT -->
+    <!-- Added by HTTrack -->
+    <meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+
+    <head>
+        <title>스포츠와 여행을 함께! 스포투어</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta property="og:title" content="스포츠와 여행을 함께! 스포투어" />
+        <meta property="og:description" content="스포츠와 여행을 함께! 스포투어입니다." />
+        <meta property="og:image" content="http://m.tourdaum.com/Error/Oops404/404" />
+        <meta property="og:url" content="http://m.tourdaum.com/" />
+        <link rel="stylesheet" href="nav.css">
+        <link rel="shortcut icon" href="Resources/Images/favicon.ico" />
+        <link href="Resources/css/style.css" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" type="text/css" href="Resources/css/bxslider.css" />
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,400,500,700&amp;subset=korean" />
+        <link rel="stylesheet" href="Resources/css/responsive.css">
+        <script type="text/javascript" src="Resources/js/jquery.min.js"></script>
+        <script type="text/javascript" src="Resources/js/jquery.bxslider.min.js"></script>
+        <script type="text/javascript" src="Resources/js/common.js"></script>
+        <script type="text/javascript" src="Scripts/common.js"></script>
+        <!-- Global site tag (gtag.js) - Google Ads: 681620318 -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-681620318"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag("js", new Date());
+            gtag("config", "AW-681620318");
+        </script>
+
+        <script type="text/javascript" charset="UTF-8" src="../t1.daumcdn.net/adfit/static/kp.js"></script>
+        <script type="text/javascript">
+            kakaoPixel("7065337229126516084").pageView();
+        </script>
+        <script type="text/javascript">
+            //모바일웹 분기
+            if (
+                navigator.userAgent.match(/iPhone/i) ||
+                navigator.userAgent.match(/iPod/i) ||
+                navigator.userAgent.match(/Windows CE/i) ||
+                navigator.userAgent.match(/Symbian/i) ||
+                navigator.userAgent.match(/BlackBerry/i) ||
+                navigator.userAgent.match(/Android/i)
+            ) {
+                //현재URL
+                var currentPage = document.location.href;
+                if (currentPage.match(/www.tourdaum.com/i)) {
+                    document.location.replace(
+                        currentPage.replace("www.tourdaum.com", "m.tourdaum.com")
+                    );
+                }
+            }
+
+            $(function () {
+                var topSelect = "메인";
+                $("#top_" + topSelect).addClass("on");
+
+                //210121 본상품 조회용
+                //fnViewPdList();
+            });
+
+            function setCookie(name, value, expiredays) {
+                var todayDate = new Date();
+                todayDate.setDate(todayDate.getDate() + expiredays);
+                p
+                document.cookie =
+                    name +
+                    "=" +
+                    escape(value) +
+                    "; path=/; expires=" +
+                    todayDate.toGMTString() +
+                    ";";
+            }
+
+            function getCookie(name) {
+                var nameOfCookie = name + "=";
+                var x = 0;
+                while (x <= document.cookie.length) {
+                    var y = x + nameOfCookie.length;
+                    if (document.cookie.substring(x, y) == nameOfCookie) {
+                        if ((endOfCookie = document.cookie.indexOf(";", y)) == -1)
+                            endOfCookie = document.cookie.length;
+                        return unescape(document.cookie.substring(y, endOfCookie));
+                    }
+
+                    x = document.cookie.indexOf(" ", x) + 1;
+                    if (x == 0) break;
+                }
+                return "";
+            }
+
+            function fnPopClose() {
+                setCookie("pop_eventBtn", "done", 1);
+                $(".btnEvent").hide();
+            }
+
+            function placeBannerCount(link, seq) {
+                //배너 조회수 증가
+                fnBannerCount(seq, "2");
+                //해당페이지로 이동
+                document.location.href = link;
+            }
+
+            fnMainBannerLink = function (link, seq) {
+                //배너 조회수 증가
+                fnBannerCount(seq, "1");
+                //해당페이지로 이동
+                document.location.href = link;
+            };
+
+            fnBannerCount = function (seq, gubun) {
+                $.ajax({
+                    type: "POST",
+                    url: "/Etc/BannerCount",
+                    data: {
+                        seq: seq,
+                        gubun: gubun
+                    },
+                    dataType: "json",
+                    success: function (data) {},
+                    error: function (xhr, status, error) {},
+                });
+            };
+
+            function goGrade() {
+                document.location.href =
+                    "https://www.tourdaum.com:4465/Login?returnUrl=%2fMypage%2fMyGrade";
+            }
+        </script>
+
+        <script type="text/javascript">
+            window.onload = function () {
+                if (80 == "4465") {
+                    //보안 프로토콜로 들어온 경우
+                    location.href = "index.html";
+                }
+
+                var popupHeight = 0;
+            };
+
+            fnMainBannerLink = function (link, seq) {
+                //배너 조회수 증가
+                fnBannerCount(seq, "1");
+                //해당페이지로 이동
+                document.location.href = link;
+            };
+
+            fnBannerCount = function (seq, gubun) {
+                $.ajax({
+                    type: "POST",
+                    url: "/Etc/BannerCount",
+                    data: {
+                        seq: seq,
+                        gubun: gubun
+                    },
+                    dataType: "json",
+                    success: function (data) {},
+                    error: function (xhr, status, error) {},
+                });
+            };
+
+            function getCookie(name) {
+                var nameOfCookie = name + "=";
+                var x = 0;
+                while (x <= document.cookie.length) {
+                    var y = x + nameOfCookie.length;
+                    if (document.cookie.substring(x, y) == nameOfCookie) {
+                        if ((endOfCookie = document.cookie.indexOf(";", y)) == -1)
+                            endOfCookie = document.cookie.length;
+                        return unescape(document.cookie.substring(y, endOfCookie));
+                    }
+
+                    x = document.cookie.indexOf(" ", x) + 1;
+                    if (x == 0) break;
+                }
+                return "";
+            }
+
+            function numberWithCommas(x) {
+                return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            }
+
+            function fnGoUrl(url) {
+                location.href = url;
+            }
+        </script>
+        <style>
+            body {
+                --l: 3em;
+            }
+
+            .triggerButton {
+                display: none;
+            }
+
+            .triggerButton+label {
+                cursor: pointer;
+                position: absolute;
+                right: -0.5em;
+                bottom: 0em;
+                background: #a5d175;
+                height: 60px;
+                width: 60px;
+                border-radius: 10%;
+                z-index: 2;
+            }
+
+            .triggerButton+label:before,
+            .triggerButton+label:after {
+                position: absolute;
+                content: '';
+                height: calc(var(--l) / 2);
+                width: .25em;
+                background-color: #fff;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                margin: auto;
+                border-radius: .5em;
+                transition: all .25s;
+            }
+
+            .triggerButton+label:before {
+                height: calc(var(--l) / 2);
+                width: .25em;
+            }
+
+            .triggerButton+label:after {
+                width: calc(var(--l) / 2);
+                height: .25em;
+            }
+
+            .triggerButton:checked+label:before {
+                transform: rotatez(-45deg);
+            }
+
+            .triggerButton:checked+label:after {
+                transform: rotatez(-45deg);
+            }
+
+            .one,
+            .two,
+            .three {
+                cursor: pointer;
+                position: absolute;
+                right: 1em;
+                bottom: 1em;
+                padding: 1em;
+                border-radius: 50%;
+                width: 20px;
+                height: 20px;
+                opacity: 0;
+                z-index: 1;
+
+                font-size: 1em;
+                color: #fff;
+                transition-property: all;
+                transition-duration: .35s;
+                transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            }
+
+            .triggerButton:checked~.one,
+            .triggerButton:checked~.two,
+            .triggerButton:checked~.three {
+                opacity: 1;
+
+            }
+
+            .triggerButton:checked~.three {
+                transform: translateY(-1em);
+            }
+
+            .BOX {
+                width: 370px;
+                height: 600px;
+                position: absolute;
+                bottom: 10px;
+                right: 10px;
+                overflow: hidden;
+                border-radius: 0px 00px 30px 30px;
+            }
+
+            .min_box {
+                width: 372px;
+                height: 650px;
+                background-color: #fff;
+                box-shadow: 100px;
+                position: absolute;
+                bottom: 44px;
+                right: 5px;
+                border-radius: 34px;
+                box-shadow: 0px 0px 20px 0px rgb(128, 128, 128);
+            }
+
+            .box_title {
+                position: absolute;
+                left: 6px;
+                top: 10px;
+                /* background-color: yellow; */
+                width: 360px;
+                height: 66px;
+                border-bottom: 1px solid #d3d3d3;
+                color: #535353;
+                text-align: nter;
+            }
+
+            .iframe_box {
+                width: 360px;
+                height: 680px;
+                position: absolute;
+                top: -120px;
+                right: 1px;
+                border: none;
+                border-radius: 30px;
+                /* background-color: orange; */
+            }
+
+            .box_title h3 {
+                margin-top: 20px;
+            }
+
+            .login_essence {
+                position: relative;
+                top: 68px;
+                right: 90px;
+            }
+
+            .login_essence {
+                font-weight: 600;
+            }
+
+            #logoutState a:nth-child(1) {
+                position: relative;
+                right: 156px;
+            }
+
+            .my_chat {
+                zoom: 0.9;
+            }
+        </style>
+    </head>
+
+<body>
+    <!-- footer -->
+    <footer id="footer">
+        <div>
+            <div class="footer_top">
+                <!-- <p>여행문의</p><strong>1855-3355</strong>
+                <p>상담가능시간:평일 09~18시</p> -->
+                <!-- <span id ="loginState">
+                로그인 됨
+                </span>
+                <span id="logoutState">
+                로그인 안됨
+                </span> -->
+                <!-- <table>
+                    <tr>
+                            <td class="logoutState"><a href="http://127.0.0.1:5501/Dia/www.tourdaum.com/login_form/login_form.html" class="login_essence">로그인</a></td>
+                            <td class="logoutState"><a href="https://www.tourdaum.com:4465/Member/JoinHub" class="login_essence">회원가입</a></td>
+                            <td class="loginState"><a class ="login_essence" href="" onclick="logout()" class="logout_box">로그아웃</a></td>
+                            <td class="loginState"><a class="login_essence">마이페이지</a></td>
+                        <td><a href="../www.tourdaum.com\easy-fast-table-pagination\dsg.html">대사관 정보</a></td>
+                        <td><a href="https://www.tourdaum.com:4465/Login?returnUrl=%2fMypage%2fMyApplyList">견적 문의</a></td>
+                        <td><a href="Customer/FaqList.html">자주하는질문</a></td>
+                        <td><a href="Home/Company.html">회사소개</a></td>
+                    </tr>
+                </table> -->
+                <!-- <span id="logoutState"> -->
+                <a href="http://127.0.0.1:5502/Dia/www.tourdaum.com/login_form/login_form.html" class="">로그인 / 회원가입</a>
+     
+                <!-- </span> -->
+                <!-- <span id="loginState"> -->
+                <!-- <a href="" onclick="logout()" class="">로그아웃</a> -->
+                <!-- </span> -->
+                &nbsp;
+                <a href="../www.tourdaum.com\easy-fast-table-pagination\dsg.html">대사관 정보</a>
+                <a href="javascript:void(0)" onclick="alert_ready()";>견적 문의</a>
+                <a href="Customer/FaqList.html">해외 코로나 정보</a>
+                <a href="Home/Company.html">회사소개</a>
+                <!-- <div class="snslogo">
+                <a href="https://section.blog.naver.com/" target="_blank"><img src="./upload/sns_img/foot_sns01.png"
+                        alt="blog"></a>
+                <a href="https://www.facebook.com/" target="_blank"><img src="./upload/sns_img/foot_sns02.png"
+                        alt="facebook"></a>
+                <a href="https://twitter.com/#!/" target="_blank"><img src="./upload/sns_img/foot_sns03.png"
+                        alt="twitter"></a>
+                <a href="https://www.youtube.com/" target="_blank"><img src="./upload/sns_img/foot_sns04.png"
+                        alt="youtube"></a>
+                <a href="https://www.instagram.com//" target="_blank"><img src="./upload/sns_img/foot_sns05.png"
+                        alt="instagram"></a>
+                    </div> -->
+            </div>
+            <script>
+                // const my_alert = document.querySelector(".my_alert");
+                function alert_ready() {
+                    alert("준비중입니다");
+                }
+                
+            </script>
+            <script>
+                const logoutState = document.getElementsById("logoutState")
+                const loginState = document.getElementsById("loginState");
+
+                if (localStorage.getItem("token") != null) {
+                    logoutState.style.display = "none";
+                    loginState.style.display = "block";
+                } else {
+                    logoutState.style.display = "block";
+                    loginState.style.display = "none";
+                }
+            </script>
+            <script>
+                function logout() {
+                    localStorage.removeItem("token");
+                }
+            </script>
+            <!-- <a href="javascript:goJoin();" class="bnr"><img src="Resources/images/footer_bnr.png" alt="여행매거진 신청하세요" /></a> -->
+            <div class="address">
+                <p>상호 : (주)스포투어 │ 주소 : 경기도 판교</p>
+                <p> TEL : 대표전화 1004-1004</p><br>
+                <span>여행문의 2734-8282</span>
+                <p>(상담 가능시간 : 평일 09~18시)</p>
+            </div>
+            <div class="terms">
+                <a href="#" onclick="return false;" class="pointer">개인정보관리 책임자 : 머스크</a>
+                <a href="Etc/Privacy.html">개인정보 처리방침</a>
+                <a href="Etc/Policy.html">여행약관/서비스 이용약관</a>
+            </div>
+            <div class="copyright">
+                COPYRIGHT(C) SPORTOUR, ALL RIGHTS RESERVED
+            </div>
+
+            <div>
+                <ul id="copyright_sns">
+                    <li><a href="https://section.blog.naver.com/" target="_blank"><img
+                                src="upload/sns_img/foot_sns01.png" alt="blog"></a></li>
+                    <li><a href="https://www.facebook.com/" target="_blank"><img src="upload/sns_img/foot_sns02.png"
+                                alt="facebook"></a></li>
+                    <li><a href="https://twitter.com/#!/" target="_blank"><img src="upload/sns_img/foot_sns03.png"
+                                alt="twitter"></a></li>
+                    <li><a href="https://www.youtube.com/" target="_blank"><img src="upload/sns_img/foot_sns04.png"
+                                alt="youtube"></a></li>
+                    <li><a href="https://www.instagram.com//" target="_blank"><img src="upload/sns_img/foot_sns05.png"
+                                alt="instagram"></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="my_chat">
+            <button type="button" id="gotop">
+                <input id="triggerButton" class="triggerButton" type="checkbox" />
+                <label for="triggerButton"></label>
+                <div class="three">
+                    <div class="min_box">
+                        <div class="box_title">
+                            <h3>SPORTOUR</h3>
+                        </div>
+                    </div>
+                    <div class="BOX">
+                        <iframe allow="microphone;" class="iframe_box"
+                            src="https://console.dialogflow.com/api-client/demo/embedded/7a921b40-6190-4c11-a0e5-342bb8f6a2b5"></iframe>
+                    </div>
+                </div>
+            </button>
+        </div>
+    </footer>
+</body>
+
+</html>
