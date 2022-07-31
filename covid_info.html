@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from www.tourdaum.com/Customer/FaqList by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Jul 2022 15:50:26 GMT -->
+<!-- Added by HTTrack -->
+<meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+
+<head>
+    <title>스포츠와 여행을 함께! 스포투어</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta property="og:title" content="스포츠와 여행을 함께! 스포투어">
+    <meta property="og:description" content="스포츠와 여행을 함께! 스포투어">
+    <meta property="og:image" content="http://m.tourdaum.com/Error/Oops404/404">
+    <meta property="og:url" content="http://m.tourdaum.com/">
+    <link rel="shortcut icon" href="../Resources/Images/favicon.ico" />
+    <link href="../Resources/css/style.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="../Resources/css/bxslider.css" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,400,500,700&amp;subset=korean">
+    <!-- CSS only -->
+    <link rel="stylesheet" href="paginationTable.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <script type="text/javascript" src="../Resources/js/jquery.min.js"></script>
+    <script type="text/javascript" src="../Resources/js/jquery.bxslider.min.js"></script>
+    <script type="text/javascript" src="../Resources/js/common.js"></script>
+    <script type="text/javascript" src="../Scripts/common.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="../Customer/js/axios.js"></script>
+    <!-- Global site tag (gtag.js) - Google Ads: 681620318 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-681620318"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'AW-681620318');
+    </script>
+    <link rel="stylesheet" href="paginationTable.css">
+    <link rel="stylesheet" href="../Resources/css/nav.css">
+    <link rel="shortcut icon" href="../favicon.ico" />
+    <link href="Resources/css/style.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="Resources/css/bxslider.css" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,400,500,700&amp;subset=korean" />
+    <script type="text/javascript" charset="UTF-8" src="../../t1.daumcdn.net/adfit/static/kp.js"></script>
+    <script type="text/javascript">
+        kakaoPixel('7065337229126516084').pageView();
+    </script>
+    <script type="text/javascript">
+        //모바일웹 분기
+        if ((navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i)) || (navigator.userAgent
+                .match(/Windows CE/i)) || (navigator.userAgent.match(/Symbian/i)) || (navigator.userAgent.match(
+                /BlackBerry/i)) || (navigator.userAgent.match(/Android/i))) {
+            //현재URL
+            var currentPage = document.location.href
+            if (currentPage.match(/www.tourdaum.com/i)) {
+                document.location.replace(currentPage.replace("www.tourdaum.com", "m.tourdaum.com"));
+            }
+
+        }
+
+        $(function () {
+            var topSelect = "고객센터";
+            $("#top_" + topSelect).addClass("on");
+
+            //210121 본상품 조회용
+            //fnViewPdList();
+
+
+        });
+
+        function setCookie(name, value, expiredays) {
+            var todayDate = new Date();
+            todayDate.setDate(todayDate.getDate() + expiredays);
+            document.cookie = name + "=" + escape(value) + "; path=/; expires=" + todayDate.toGMTString() + ";"
+        }
+
+        function getCookie(name) {
+            var nameOfCookie = name + "=";
+            var x = 0;
+            while (x <= document.cookie.length) {
+                var y = (x + nameOfCookie.length);
+                if (document.cookie.substring(x, y) == nameOfCookie) {
+                    if ((endOfCookie = document.cookie.indexOf(";", y)) == -1)
+                        endOfCookie = document.cookie.length;
+                    return unescape(document.cookie.substring(y, endOfCookie));
+                }
+
+                x = document.cookie.indexOf(" ", x) + 1;
+                if (x == 0)
+                    break;
+            }
+            return "";
+        }
+
+        function fnPopClose() {
+            setCookie("pop_eventBtn", "done", 1);
+            $('.btnEvent').hide();
+        }
+
+        function placeBannerCount(link, seq) {
+            //배너 조회수 증가
+            fnBannerCount(seq, "2");
+            //해당페이지로 이동
+            document.location.href = link;
+        }
+
+        fnMainBannerLink = function (link, seq) {
+            //배너 조회수 증가
+            fnBannerCount(seq, "1");
+            //해당페이지로 이동
+            document.location.href = link;
+        }
+
+        fnBannerCount = function (seq, gubun) {
+            $.ajax({
+                type: "POST",
+                url: "/Etc/BannerCount",
+                data: ({
+                    "seq": seq,
+                    "gubun": gubun
+                }),
+                dataType: "json",
+                success: function (data) {},
+                error: function (xhr, status, error) {}
+            });
+        }
+
+        function goGrade() {
+            document.location.href = "https://www.tourdaum.com:4465/Login?returnUrl=%2fMypage%2fMyGrade";
+        }
+
+        //function fnViewPdList() {
+        //    var pdlist = getCookie("pdViewList");
+        //    if (pdlist != null && pdlist != "") {
+        //        $.ajax({
+        //            type: "POST",
+        //            url: "/Product/ProductViewList",
+        //            data: ({ "pdlist": pdlist }),
+        //            dataType: "json",
+        //            success: function (data) {
+        //                fnViewPdListDisplay(data)
+        //            },
+        //            error: function (xhr, status, error) {
+        //            }
+        //        });
+        //    }
+        //}
+
+        //fnViewPdListDisplay = function (data, page) {
+        //    var _totalCount = data.length;
+        //    var listData = "";
+        //    var target = $("#pdViewList");
+
+        //    //target.empty();
+        //    if (_totalCount == 0) {
+        //        target.append("");
+        //    } else {
+        //        var html = [];
+        //        html.push(
+        //            " <span>",
+        //            "   <a href='/Product/ProductSelect?productId={0}'>",
+        //            "       <img src='{1}{2}'/>",
+        //            "       <div>",
+        //            "          <p class='toe'>{6}</p>",
+        //            "          <span class='category {9}'>{4}</span>",
+        //            "          <span class='price'><strong>{7}</strong>원~</span>",
+        //            "          <span {8} class='mission'>미션</span>",
+        //            "       </div>",
+        //            "   </a>",
+        //            "</span>"
+        //        );
+        //        listhtml = html.join("");
+
+        //        var categoryClass = "";
+        //        for (i = 0; i < _totalCount; i++) {
+
+        //            if (data[i].DivCd == "N") {
+        //                categoryClass = "stay"
+        //            }
+        //            else {
+        //                categoryClass = "day"
+        //            }
+        //            var icon = "";
+        //            if (data[i].SpecialYn != "Y") {
+        //                icon = "style='display:none;'"
+        //            }
+        //            listData = util.format(listhtml, data[i].ProductId, data[i].ThumbFilePath, data[i].ThumbFileNm,
+        //                data[i].DivCd, data[i].DivNm, data[i].ProductDesc, data[i].ProductNm, data[i].SellPrice, icon, categoryClass);
+        //            target.append(listData);
+        //        }
+        //    }
+
+
+        //}
+    </script>
+
+    <script language="javascript">
+        $(document).ready(function () {
+            var lnbSelect = "faq";
+            $("#lnb_" + lnbSelect).addClass("on");
+            $("#searchPreface").change(function () {
+                $("#bForm").submit();
+
+            });
+        });
+    </script>
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $("#headers").load("header.html"); // 원하는 파일 경로를 삽입하면 된다
+            $("#footers").load("footer.html");
+        });
+    </script>
+
+
+</head>
+
+<body>
+    <div id="headers"></div>
+    <input type="hidden" id="mChkId" value="1" />
+    <!-- [s]top-->
+    <!--//[e]top-->
+    <div id="wrap">
+        <!-- mask -->
+        <div id="mask">
+            <div class="layerWindow"></div>
+        </div>
+        <!-- //mask -->
+
+        <!-- 210121 본상품 조회용 -->
+
+        <!-- 210121 본상품 조회용 -->
+        <!-- [s]header -->
+
+
+        <script>
+            function fnSearch() {
+                var keyWord = $("#searchKeyWord").val();
+                if (keyWord == "") {
+                    alert("검색어를 입력해주세요.");
+                } else {
+                    location.href = "/Product/ProductSearchList?keyWord=" + encodeURIComponent(keyWord);
+                }
+
+            }
+        </script>
+
+        <!-- //nav -->
+
+        <!-- [e]header -->
+        <!-- sub_location-->
+        <!--// sub_location-->
+
+        <!-- [s]contents -->
+        <div id="container">
+            <div id="contents">
+                <!-- lnb -->
+                <div class="lnb">
+                    <strong>코로나 정보</strong>
+                    <ul>
+                        <li>
+                            <a id="lnb_notice" href="javascript:void(0)" onclick="alert_message();">실시간 코로나 정보</a>
+                        </li>
+                        <li>
+                            <a id="lnb_faq" href="javascript:void(0)">각 세계 상황 API</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- //lnb -->
+                <script>
+                    function alert_message() {
+                        alert("현재 준비중입니다! 이용에 불편을 드려 죄송합니다");
+                    }
+                </script>
+
+
+                <div class="page">
+                    <style>
+                        .L {
+                            text-align: center;
+                        }
+                    </style>
+                    <script>
+                        function search_content() {
+                            
+                        }
+                    </script>
+                    <div class="tbl_list" style="text-align:center">
+
+                        <input id="search" type="text"><button onclick="search_content">찾기</button>
+                        <table class="faq">
+                            <colgroup>
+                                <col width="20%">
+                                <col>
+                            </colgroup>
+                            <thead>
+                                <tr style="background-color: rgb(18, 117, 156);">
+                                    <th scope="col">나라 이름</th>
+                                    <th scope="col">격리 정보</th>
+                                </tr>
+                            </thead>
+                            <tr class="must_repeat">
+                                <th scope="row" class="covid_country"></th>
+                                <td>
+                                    <a href="javascript:void(0)" onclick="myToggle();">자세히 보기</a>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <br>
+
+                </div>
+                <!-- <tbody id="haha"></tbody> -->
+
+            </div>
+        </div>
+
+        <!-- <script>
+            const covid_infor = reqUserList();
+            
+            function test1 () {
+                return [
+                    {"name": "지혜", "phone": "010-1111-2222"},
+                    {"name": "준호", "phone": "010-2222-3333"}
+                ]
+            }
+
+            function test2 (list) {
+                const dom = list.map(elem => 
+                    `<tr><td>${elem.name}</td><td>${elem.phone}</td></tr>`);
+                    return dom;
+                }
+                
+            function test3(dom) {
+                const d = dom.join('');
+                document.querySelector(".must_repeat").innerHTML = d;
+            }
+
+            function render() {
+                const userListDom = makeListToDom(covid_infor);
+                renderList(userListDom);
+            }
+        </script> -->
+
+        <div id="my_container">
+        <div id="modal" class="modal-overlay">
+            <div class="modal-window">
+                <div class="modal_title">
+                    <h2 style="text-align: center;">상세 정보</h2>
+                </div>
+                <button class="close-area" onclick="myToggleExit();" onmouseover="check_mouse();">X</button>
+                <div class="content">
+                    <p class="real_content" onclick="covid_data()"></p>
+                </div>
+            </div>
+        </div>
+        <style>
+            .close-area {
+                zoom: 0.9;
+            }
+        </style>
+        <script>
+            function check_mouse() {
+                const x_button = document.getElementsByClassName("close-area");
+                x_button.style.color = "red";
+            }
+        </script>
+        <script>
+
+            function myToggle () {
+                // event.preventDefault();
+            const modal_overlay = document.querySelector(".modal-overlay");
+            // const modal_overlay = document.querySelector(".modal-overlay");
+            if (true) {
+                modal_overlay.style.display = "flex";
+            }
+        }
+            function myToggleExit () {
+                // event.preventDefault();
+            const modal_overlay = document.querySelector(".modal-overlay");
+             if (modal_overlay.style.display === "flex") 
+                modal_overlay.style.display = "none";
+        }
+            </script>
+
+        <script>
+            let global_covid_data = [];
+
+
+            async function covid_data() {
+ 
+                try {
+                    const response = await axios.get("http://localhost:8082/travinfo/worcorinfo");
+                    global_covid_data = response.data;
+                    // console.log(global_covid_data, 'covid data');
+                    const realcontent = document.querySelector(".real_content");
+                    realcontent.innerHTML = global_covid_data[174].txt_origin_cn;
+                    // console.log(response);
+                    // console.log(response.data)
+                } catch (err) {
+                    console.log(err);
+                }
+
+                let covid_country = document.querySelector(".covid_country");
+                const resultData = global_covid_data.map(info => {
+                    // const mainP = querySelector(".content>p");
+             
+                    let p = document.createElement("p");
+                    let tr = document.createElement('tr');
+                    let th = document.createElement("th");
+                    
+                    th.innerHTML = info.country_nm;
+                    p.innerHTML = info.txt_origin_cn;
+                    tr.appendChild(th);
+                    tr.appendChild(p);
+                    covid_country.appendChild(tr);
+                
+                })
+            
+            //    .content > p 
+            }
+
+            covid_data();
+
+            async function covid_country() {
+                try {
+                    const response = await axios.get("http://localhost:8082/travinfo/worcorinfo");
+                    global_covid_country = response.data;
+                    const covid_country = document.querySelector(".covid_country");
+                    covid_country.innerHTML = global_covid_country[174].country_nm;
+                } catch (err) {
+                console.log(err);
+            }
+        }
+        covid_country();
+
+            // function press_btn() {
+            //     const my_modal = document.querySelector(".modal_title");
+            //     my_modal.forEach((md,index) {
+            //         md.textContent = item[md.getAttribute];
+            //     })
+            // }
+
+            // console.log(global_covid_data, 'covid data');
+        </script>
+
+        <script>
+            // global_covid_data mapping 하기
+            async function data_mapping () {
+            const response = await axios.get("http://localhost:8082/travinfo/worcorinfo");
+            global_covid_data = response.data;
+            console.log(global_covid_data);
+
+        }
+        data_mapping();
+        </script>
+
+
+        </script> 
+        <style>
+            #modal.modal-overlay {
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                left: 0;
+                top: 0;
+                display: none;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                background: rgba(255, 255, 255, 0.25);
+                box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+                backdrop-filter: blur(1.5px);
+                -webkit-backdrop-filter: blur(1.5px);
+                border-radius: 10px;
+                border: 1px solid rgba(255, 255, 255, 0.18);
+            }
+
+            #modal .modal-window {
+                background: rgba(69, 139, 197, 0.70);
+                box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+                backdrop-filter: blur(13.5px);
+                -webkit-backdrop-filter: blur(13.5px);
+                border-radius: 10px;
+                border: 1px solid rgba(255, 255, 255, 0.18);
+                width: 800px;
+                height: 400px;
+                overflow: scroll;
+                position: relative;
+                top: -100px;
+                padding: 10px;
+            }
+
+            #modal .title {
+                padding-left: 10px;
+                display: inline;
+                text-shadow: 1px 1px 2px gray;
+                color: white;
+
+            }
+
+            #modal .title h2 {
+                display: inline;
+            }
+
+            #modal .close-area {
+                display: inline;
+                float: right;
+                padding-right: 3px;
+                cursor: pointer;
+                text-shadow: 1px 1px 2px gray;
+                background-color: rgb(124,173,213);
+                color: whitesmoke;
+            }
+
+            #modal .content {
+                margin-top: 20px;
+                padding: 0px 10px;
+                text-shadow: 1px 1px 2px gray;
+                color: white;
+            }
+        </style>
+        <!-- <button type="button" id="gotop" title="위로가기"></button> -->
+
+        <div id="footers"></div>
+
+
+
+        <script>
+            (function (w, d, s, l, i) {
+                w[l] = w[l] || [];
+                w[l].push({
+                    'gtm.start':
+
+                        new Date().getTime(),
+                    event: 'gtm.js'
+                });
+                var f = d.getElementsByTagName(s)[0],
+
+                    j = d.createElement(s),
+                    dl = l != 'dataLayer' ? '&l=' + l : '';
+                j.async = true;
+                j.src =
+
+                    '../../www.googletagmanager.com/gtm5445.html?id=' + i + dl;
+                f.parentNode.insertBefore(j, f);
+
+            })(window, document, 'script', 'dataLayer', 'GTM-5NJJDSN');
+        </script>
+        <!-- Enliple Tracker Start -->
+        <script type="text/javascript">
+            (function (a, g, e, n, t) {
+                a.enp = a.enp || function () {
+                    (a.enp.q = a.enp.q || []).push(arguments)
+                };
+                n = g.createElement(e);
+                n.async = !0;
+                n.defer = !0;
+                n.src = "../../cdn.megadata.co.kr/dist/prod/enp_tracker_self_hosted.min.js";
+                t = g.getElementsByTagName(e)[0];
+                t.parentNode.insertBefore(n, t)
+            })(window, document, "script");
+            enp('create', 'common', 'kyowontravel', {
+                device: 'W'
+            }); // W:웹, M: 모바일, B: 반응형
+            enp('send', 'common', 'kyowontravel');
+        </script>
+        <!-- Enliple Tracker End -->
+        <!-- ADN Tracker[공통] start -->
+        <script type="text/javascript">
+            var adn_param = adn_param || [];
+            adn_param.push([{
+                ui: '103614',
+                ut: 'Home'
+            }]);
+        </script>
+        <script type="text/javascript" defer="" src="../../fin.rainbownine.net/js/adn_tags_2.1.3.js"></script>
+        <!-- ADN Tracker[공통] end -->
+        <!-- ADN 클로징패널 설치  start -->
+        <script type="text/javascript">
+            var adn_panel_param = adn_panel_param || [];
+            adn_panel_param.push([{
+                ui: '103614',
+                ci: '1036140001',
+                gi: '47719'
+            }]);
+        </script>
+        <script type="text/javascript" async src="../../fin.rainbownine.net/js/across_adn_closed_pc_ad_1.0.4.js">
+        </script>
+        <!-- ADN 클로징패널 설치 end -->
+        <!-- WIDERPLANET  SCRIPT START 2021.6.9 -->
+        <div id="wp_tg_cts" style="display:none;"></div>
+        <script type="text/javascript">
+            var wptg_tagscript_vars = wptg_tagscript_vars || [];
+            wptg_tagscript_vars.push(
+                (function () {
+                    return {
+                        wp_hcuid: "",
+                        /*고객넘버 등 Unique ID (ex. 로그인  ID, 고객넘버 등 )를 암호화하여 대입.
+                         *주의 : 로그인 하지 않은 사용자는 어떠한 값도 대입하지 않습니다.*/
+                        ti: "52102",
+                        /*광고주 코드 */
+                        ty: "Home",
+                        /*트래킹태그 타입 */
+                        device: "web" /*디바이스 종류  (web 또는  mobile)*/
+
+                    };
+                }));
+        </script>
+        <script type="text/javascript" async src="../../cdn-aitg.widerplanet.com/js/wp_astg_4.0.js"></script>
+        <!-- // WIDERPLANET  SCRIPT END 2021.6.9 -->
+        <script type="text/javascript" src="http://static.tagmanager.toast.com/tag/view/1798"></script>
+        <script type="text/javascript">
+            window.ne_tgm_q = window.ne_tgm_q || [];
+            window.ne_tgm_q.push({
+                tagType: 'visit',
+                device: 'web' /*web, mobile, tablet*/ ,
+                uniqValue: '',
+                pageEncoding: 'utf-8'
+            });
+        </script>
+        <script type="text/javascript" src="../../wcs.naver.net/wcslog.js"></script>
+        <script type="text/javascript">
+            if (!wcs_add) var wcs_add = {};
+            wcs_add["wa"] = "a80ccf421f0b88";
+            if (window.wcs) {
+                wcs_do();
+            }
+        </script>
+        <!-- [e]footer -->
+    </div>
+    <!-- [e]wrap -->
+    <!-- AceCounter Log Gathering Script V.8.0.2019080601 -->
+    <script language='javascript'>
+        var _AceGID = (function () {
+            var Inf = ['gtc1.acecounter.com', '8080', 'AS4A44817684720', 'AW', '0', 'NaPm,Ncisy', 'ALL', '0'];
+            var _CI = (!_AceGID) ? [] : _AceGID.val;
+            var _N = 0;
+            var _T = new Image(0, 0);
+            if (_CI.join('.').indexOf(Inf[3]) < 0) {
+                _T.src = "https://" + Inf[0] + '/?cookie';
+                _CI.push(Inf);
+                _N = _CI.length;
+            }
+            return {
+                o: _N,
+                val: _CI
+            };
+        })();
+        var _AceCounter = (function () {
+            var G = _AceGID;
+            var _sc = document.createElement('script');
+            var _sm = document.getElementsByTagName('script')[0];
+            if (G.o != 0) {
+                var _A = G.val[G.o - 1];
+                var _G = (_A[0]).substr(0, _A[0].indexOf('.'));
+                var _C = (_A[7] != '0') ? (_A[2]) : _A[3];
+                var _U = (_A[5]).replace(/\,/g, '_');
+                _sc.src = 'https:' + '//cr.acecounter.com/Web/AceCounter_' + _C + '.js?gc=' + _A[2] + '&py=' +
+                    _A[4] + '&gd=' + _G + '&gp=' + _A[1] + '&up=' + _U + '&rd=' + (new Date().getTime());
+                _sm.parentNode.insertBefore(_sc, _sm);
+                return _sc.src;
+            }
+        })();
+    </script>
+    <!-- AceCounter Log Gathering Script End -->
+
+</body>
+
+</html>
