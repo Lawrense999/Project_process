@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>스포츠와 여행을 함께! 스포투어</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta property="og:title" content="스포츠와 여행을 함께! 스포투어">
+    <meta property="og:description" content="스포츠와 여행을 함께! 스포투어입니다.">
+    
+    
+    <link rel="shortcut icon" href="../favicon.ico" />
+    <link href="../Resources/css/style.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="../Resources/css/bxslider.css" />
+    
+    <style>
+        @import url("https://fonts.googleapis.com/css?family=Fira+Sans");
+
+        .my_own_form {
+            background-image: url("images/loginform_italia.jpg");
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            zoom: 1.2;
+        }
+
+        .form-structor {
+            background-color: rgba(0, 0, 0, 0.8);
+            border-radius: 15px;
+            height: 550px;
+            width: 350px;
+            position: relative;
+            display: flex;
+            /* margin-left: 35vw; */
+            margin-top: 140px;
+            overflow: hidden;
+        }
+
+        .form-structor::after {
+            content: "";
+            opacity: 0.8;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-repeat: no-repeat;
+            background-position: 67% top;
+            background-size: 1200px;
+            /* background-image: url("./images/loginform_italia.jpg"); */
+        }
+
+        .form-structor .signup {
+            position: absolute;
+            top: 43%;
+            left: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            width: 65%;
+            z-index: 5;
+            -webkit-transition: all 0.3s ease;
+        }
+
+        .form-structor .signup.slide-up {
+            top: 5%;
+            -webkit-transform: translate(-50%, 0%);
+            -webkit-transition: all 0.3s ease;
+        }
+
+        .form-structor .signup.slide-up .form-holder,
+        .form-structor .signup.slide-up .submit-btn {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .form-structor .signup.slide-up .form-title {
+            font-size: 1em;
+            cursor: pointer;
+        }
+
+        .form-structor .signup.slide-up .form-title span {
+            margin-right: 5px;
+            opacity: 1;
+            visibility: visible;
+            -webkit-transition: all 0.3s ease;
+        }
+
+        .form-structor .signup .form-title {
+            color: #fff;
+            font-size: 1.7em;
+            margin-left: 17%;
+            margin-bottom: -20px;
+        }
+
+        .form-structor .signup .form-title span {
+            color: rgba(0, 0, 0, 0.4);
+            opacity: 0;
+            visibility: hidden;
+            -webkit-transition: all 0.3s ease;
+        }
+
+        .form-structor .signup .form-holder {
+            border-radius: 15px;
+            background-color: #fff;
+            overflow: hidden;
+            margin-top: 50px;
+            opacity: 1;
+            visibility: visible;
+            -webkit-transition: all 0.3s ease;
+        }
+
+        .form-structor .signup .form-holder .input {
+            border: 0;
+            outline: none;
+            box-shadow: none;
+            display: block;
+            height: 30px;
+            line-height: 30px;
+            padding: 8px 15px;
+            border-bottom: 1px solid #eee;
+            width: 100%;
+            font-size: 12px;
+        }
+
+        .form-structor .signup .form-holder .input:last-child {
+            border-bottom: 0;
+        }
+
+        .form-structor .signup .form-holder .input::-webkit-input-placeholder {
+            color: rgba(0, 0, 0, 0.4);
+        }
+
+        .form-structor .signup .submit-btn {
+            background-color: #3ab4f2;
+            color: rgba(255, 255, 255, 0.6);
+            border: 0;
+            border-radius: 15px;
+            display: block;
+            margin: 15px auto;
+            padding: 15px 45px;
+            width: 100%;
+            font-size: 13px;
+            font-weight: bold;
+            cursor: pointer;
+            opacity: 1;
+            visibility: visible;
+            -webkit-transition: all 0.3s ease;
+        }
+
+        .form-structor .signup .submit-btn:hover {
+            transition: all 0.3s ease;
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .form-structor .login {
+            position: absolute;
+            top: 20%;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #fff;
+            z-index: 5;
+            -webkit-transition: all 0.3s ease;
+        }
+
+        .form-structor .login::before {
+            content: "";
+            position: absolute;
+            left: 50%;
+            top: -20px;
+            -webkit-transform: translate(-50%, 0);
+            background-color: #fff;
+            width: 200%;
+            height: 250px;
+            border-radius: 50%;
+            z-index: 4;
+            -webkit-transition: all 0.3s ease;
+        }
+
+        .form-structor .login .center {
+            position: absolute;
+            top: calc(50% - 10%);
+            left: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            width: 65%;
+            z-index: 5;
+            -webkit-transition: all 0.3s ease;
+        }
+
+        .form-structor .login .center .form-title {
+            color: #000;
+            font-size: 1.7em;
+            margin-left: 21%
+        }
+
+        .form-structor .login .center .form-title span {
+            color: rgba(0, 0, 0, 0.4);
+            opacity: 0;
+            visibility: hidden;
+            -webkit-transition: all 0.3s ease;
+        }
+
+        .form-structor .login .center .form-holder {
+            border-radius: 15px;
+            background-color: #fff;
+            border: 1px solid #eee;
+            overflow: hidden;
+            margin-top: 50px;
+            opacity: 1;
+            visibility: visible;
+            -webkit-transition: all 0.3s ease;
+        }
+
+        .form-structor .login .center .form-holder .input {
+            border: 0;
+            outline: none;
+            box-shadow: none;
+            display: block;
+            height: 30px;
+            line-height: 30px;
+            padding: 8px 15px;
+            border-bottom: 1px solid #eee;
+            width: 100%;
+            font-size: 12px;
+        }
+
+        .form-structor .login .center .form-holder .input:last-child {
+            border-bottom: 0;
+        }
+
+        .form-structor .login .center .form-holder .input::-webkit-input-placeholder {
+            color: rgba(0, 0, 0, 0.4);
+        }
+
+        .form-structor .login .center .submit-btn {
+            background-color: #6B92A4;
+            color: rgba(255, 255, 255, 0.7);
+            border: 0;
+            border-radius: 15px;
+            display: block;
+            margin: 15px auto;
+            padding: 15px 45px;
+            width: 100%;
+            font-size: 13px;
+            font-weight: bold;
+            cursor: pointer;
+            opacity: 1;
+            visibility: visible;
+            -webkit-transition: all 0.3s ease;
+        }
+
+        .form-structor .login .center .submit-btn:hover {
+            transition: all 0.3s ease;
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .form-structor .login.slide-up {
+            top: 90%;
+            -webkit-transition: all 0.3s ease;
+        }
+
+        .form-structor .login.slide-up .center {
+            top: 10%;
+            -webkit-transform: translate(-50%, 0%);
+            -webkit-transition: all 0.3s ease;
+        }
+
+        .form-structor .login.slide-up .form-holder,
+        .form-structor .login.slide-up .submit-btn {
+            opacity: 0;
+            visibility: hidden;
+            -webkit-transition: all 0.3s ease;
+        }
+
+        .form-structor .login.slide-up .form-title {
+            font-size: 1em;
+            margin: 0;
+            padding: 0;
+            cursor: pointer;
+            -webkit-transition: all 0.3s ease;
+        }
+
+        .form-structor .login.slide-up .form-title span {
+            margin-right: 5px;
+            opacity: 1;
+            visibility: visible;
+            -webkit-transition: all 0.3s ease;
+        }
+    </style>
+    <script type="text/javascript" src="/Resources/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/Resources/js/jquery.bxslider.min.js"></script>
+    <script type="text/javascript" src="/Resources/js/common.js"></script>
+    <script type="text/javascript" src="/Scripts/common.js"></script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-681620318"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'AW-681620318');
+    </script>
+
+    <script type="text/javascript" charset="UTF-8" src="//t1.daumcdn.net/adfit/static/kp.js"></script>
+    <script type="text/javascript">
+        kakaoPixel('7065337229126516084').pageView();
+    </script>
+    <script type="text/javascript">
+        //모바일웹 분기
+        if ((navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i)) || (navigator.userAgent
+                .match(/Windows CE/i)) || (navigator.userAgent.match(/Symbian/i)) || (navigator.userAgent.match(
+                /BlackBerry/i)) || (navigator.userAgent.match(/Android/i))) {
+            //현재URL
+            var currentPage = document.location.href
+            if (currentPage.match(/www.tourdaum.com/i)) {
+                document.location.replace(currentPage.replace("www.tourdaum.com", "m.tourdaum.com"));
+            }
+
+        }
+
+        $(function () {
+            var topSelect = "회원";
+            $("#top_" + topSelect).addClass("on");
+
+
+
+
+        });
+
+        function setCookie(name, value, expiredays) {
+            var todayDate = new Date();
+            todayDate.setDate(todayDate.getDate() + expiredays);
+            document.cookie = name + "=" + escape(value) + "; path=/; expires=" + todayDate.toGMTString() + ";"
+        }
+
+        function getCookie(name) {
+            var nameOfCookie = name + "=";
+            var x = 0;
+            while (x <= document.cookie.length) {
+                var y = (x + nameOfCookie.length);
+                if (document.cookie.substring(x, y) == nameOfCookie) {
+                    if ((endOfCookie = document.cookie.indexOf(";", y)) == -1)
+                        endOfCookie = document.cookie.length;
+                    return unescape(document.cookie.substring(y, endOfCookie));
+                }
+
+                x = document.cookie.indexOf(" ", x) + 1;
+                if (x == 0)
+                    break;
+            }
+            return "";
+        }
+
+        function fnPopClose() {
+            setCookie("pop_eventBtn", "done", 1);
+            $('.btnEvent').hide();
+        }
+
+        function placeBannerCount(link, seq) {
+            //배너 조회수 증가
+            fnBannerCount(seq, "2");
+            //해당페이지로 이동
+            document.location.href = link;
+        }
+
+        fnMainBannerLink = function (link, seq) {
+            //배너 조회수 증가
+            fnBannerCount(seq, "1");
+            //해당페이지로 이동
+            document.location.href = link;
+        }
+
+        fnBannerCount = function (seq, gubun) {
+            $.ajax({
+                type: "POST",
+                url: "/Etc/BannerCount",
+                data: ({
+                    "seq": seq,
+                    "gubun": gubun
+                }),
+                dataType: "json",
+                success: function (data) {},
+                error: function (xhr, status, error) {}
+            });
+        }
+
+        function goGrade() {
+            document.location.href = "/Mypage/MyGrade";
+        }
+    </script>
+
+    <script src="/Scripts/jquery.validate.min.js"></script>
+    <script src="/Resources/js/common.js"></script>
+    <script src="/Scripts/LoginJs.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(window.document).ready(function () {
+            var flag = "Y";
+            if (flag == 'N') {
+                $("input:checkbox[id='idSave']").attr("checked", true);
+                $("#userId").val('');
+            }
+            fn_checkValid();
+        });
+
+        function fnCheckSubmit() {
+
+            //파라미터는 태그의 name 속성으로 들어감
+            if (!$("#loginForm").valid()) {
+                return;
+            }
+
+            //$("#loginForm").submit();
+            fnFormSubmit();
+        }
+
+        function fnFormSubmit() {
+            if ($("input:checkbox[id='idSave']").is(":checked") == true) {
+                $("#idSaveYn").val("Y");
+            }
+            //$("#loginForm").attr("action", "/Login/Login");
+            $("#loginForm").submit();
+        }
+
+
+        /**
+         * form체크 Rule 정의
+         */
+        function fn_checkValid() {
+            $("#loginForm").validate({
+                //ignore: [],
+                // 입력 체크 룰을 입력.
+
+                //onkeyup: false,
+                //onclick: false,
+                //onfocusout: false,
+
+                //폼에 함께 보여주기 싫고 알럿으로 메세지 보여 주고 싶을 때 쓴다.
+                showErrors: function (errorMap, errorList) {
+                    if (!$.isEmptyObject(errorList)) {
+                        alert(errorList[0].message);
+                    }
+                },
+                rules: {
+                    userId: {
+                        required: true,
+                        maxlength: 20
+                    },
+                    userPass: {
+                        required: true
+                    }
+                },
+
+                // 룰에 위반 시 띄울 메세지 입력.
+                messages: {
+                    userId: {
+                        required: "아이디를 입력해 주세요."
+                    },
+
+                    userPass: {
+                        required: "비밀번호를 입력해 주세요."
+                    }
+                }
+            });
+        }
+
+        function goRtnUrl() {
+            location.href = '';
+        }
+
+        function fnKakao() {
+            var returnUrl = $("#returnUrl").val();
+            location.href = "https://www.tourdaum.com:4465" + "/KakaoJoin/JoinStepkakao?flag=Login&returnUrl=" +
+                returnUrl;
+        }
+    </script>
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#headers").load("header.html");
+            $("#footers").load("footer.html");
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+</head>
+
+<body>
+    <!-- 회원가입 폼 -->
+    <div id="headers"></div>
+    <div class="my_own_form">
+        <div class="form-structor">
+            <div class="signup">
+                <h2 class="form-title" id="signup"><span>or</span>회원가입</h2>
+                <div class="form-holder">
+                    <input type="text" class="input" id="nickname" placeholder="닉네임" required />
+                    <input type="email" class="input" id="email" placeholder="이메일" required />
+                    <input type="password" class="input" id="pw" placeholder="비밀번호" required />
+                    <input type="text" class="input" id="name" placeholder="이름" required />
+                    <input type="text" class="input" id="eng_name" placeholder="영문이름" required />
+                    <input type="tel" class="input" id="tel" placeholder="전화번호" required />
+                </div>
+                <button class="submit-btn" type="submit" onclick="join()">회원가입</button>
+            </div>
+            <script>
+                function join() {
+                    let nickname = document.getElementById('nickname').value;
+                    let email = document.getElementById('email').value;
+                    let pw = document.getElementById('pw').value;
+                    let name = document.getElementById('name').value;
+                    let eng_name = document.getElementById('eng_name').value;
+                    let tel = document.getElementById('tel').value;
+
+                    axios.post('http://localhost:8082/auth/signup', {
+                        'username' : nickname,
+                        'email' : email,
+                        'password' : pw,
+                        'korname' : name,
+                        'engname' : eng_name,
+                        'phone' : tel
+                        })
+                        .then(function (response) {
+                            console.log(response);
+                        })
+                        .catch(function (error) {
+                            console.log(error);
+                        });
+
+                        swal("회원가입이 완료되었습니다.","","success", {
+                            buttons: {
+                                catch: {
+                                    text: "확인",
+                                    value: "catch",
+                                }
+                            }
+                        });
+                }
+            </script>
+            <!-- 로그임폼 -->
+            <div class="login slide-up">
+                <div class="center">
+                    <h2 class="form-title" id="login"><span>or</span>로그인</h2>
+                    <div class="form-holder">
+                        <input type="email" class="input" id="login_email" placeholder="이메일" required />
+                        <input type="password" class="input" id="login_passward" placeholder="비밀번호" required />
+                    </div>
+                    <button class="submit-btn" onclick="login()" type="submit">로그인</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>   
+
+    <script>
+        function login() {
+            let login_email = document.getElementById('login_email').value;
+            let login_passward = document.getElementById('login_passward').value;
+            
+            axios.post('http://localhost:8082/auth/signin', {
+                'email' : login_email,
+                'password' : login_passward,
+                })
+                .then(function (response) {
+                    let token = response.data.token;
+                    if (token != null) {
+                        localStorage.setItem("token",token);
+                        console.log('token>>>',token);
+                        swal("로그인이 완료되었습니다!", {
+                            buttons: {
+                                catch: {
+                                    text: "확인",
+                                    value: "catch",
+                                }
+                            }
+                        })
+                        .then(()=> {
+                            location.href="../index.html";  
+                        });
+                    }
+                })
+                .catch(function (error) {
+                    console.log(error);
+                    if(error != null){
+                        alert('로그인 실페')
+                    }
+                });
+
+                
+                    }
+    </script>
+    <script>
+        console.clear();
+
+        const loginBtn = document.getElementById('login');
+        const signupBtn = document.getElementById('signup');
+
+        loginBtn.addEventListener('click', (e) => {
+            let parent = e.target.parentNode.parentNode;
+            Array.from(e.target.parentNode.parentNode.classList).find((element) => {
+                if (element !== "slide-up") {
+                    parent.classList.add('slide-up')
+                } else {
+                    signupBtn.parentNode.classList.add('slide-up')
+                    parent.classList.remove('slide-up')
+                }
+            });
+        });
+
+        signupBtn.addEventListener('click', (e) => {
+            let parent = e.target.parentNode;
+            Array.from(e.target.parentNode.classList).find((element) => {
+                if (element !== "slide-up") {
+                    parent.classList.add('slide-up')
+                } else {
+                    loginBtn.parentNode.parentNode.classList.add('slide-up')
+                    parent.classList.remove('slide-up')
+                }
+            });
+        });
+    </script>
+
+    <div id="footers"></div>
+
+
+    <!-- footer -->
+
+    <!-- //footer -->
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start':
+
+                    new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+
+        })(window, document, 'script', 'dataLayer', 'GTM-5NJJDSN');
+    </script>
+    <!-- Enliple Tracker Start -->
+    <script type="text/javascript">
+        (function (a, g, e, n, t) {
+            a.enp = a.enp || function () {
+                (a.enp.q = a.enp.q || []).push(arguments)
+            };
+            n = g.createElement(e);
+            n.async = !0;
+            n.defer = !0;
+            n.src = "https://cdn.megadata.co.kr/dist/prod/enp_tracker_self_hosted.min.js";
+            t = g.getElementsByTagName(e)[0];
+            t.parentNode.insertBefore(n, t)
+        })(window, document, "script");
+        enp('create', 'common', 'kyowontravel', {
+            device: 'W'
+        }); // W:웹, M: 모바일, B: 반응형
+        enp('send', 'common', 'kyowontravel');
+    </script>
+
+    <script type="text/javascript">
+        var adn_param = adn_param || [];
+        adn_param.push([{
+            ui: '103614',
+            ut: 'Home'
+        }]);
+    </script>
+    <script type="text/javascript" defer="" src="//fin.rainbownine.net/js/adn_tags_2.1.3.js"></script>
+
+    <script type="text/javascript">
+        var adn_panel_param = adn_panel_param || [];
+        adn_panel_param.push([{
+            ui: '103614',
+            ci: '1036140001',
+            gi: '47719'
+        }]);
+    </script>
+    <script type="text/javascript" async src="//fin.rainbownine.net/js/across_adn_closed_pc_ad_1.0.4.js"></script>
+    
+    <div id="wp_tg_cts" style="display:none;"></div>
+    <script type="text/javascript">
+        var wptg_tagscript_vars = wptg_tagscript_vars || [];
+        wptg_tagscript_vars.push(
+            (function () {
+                return {
+                    wp_hcuid: "",
+                    /*고객넘버 등 Unique ID (ex. 로그인  ID, 고객넘버 등 )를 암호화하여 대입.
+                     *주의 : 로그인 하지 않은 사용자는 어떠한 값도 대입하지 않습니다.*/
+                    ti: "52102",
+                    /*광고주 코드 */
+                    ty: "Home",
+                    /*트래킹태그 타입 */
+                    device: "web" /*디바이스 종류  (web 또는  mobile)*/
+
+                };
+            }));
+    </script>
+    
+
+    
+    <script type="text/javascript">
+        window.ne_tgm_q = window.ne_tgm_q || [];
+        window.ne_tgm_q.push({
+            tagType: 'visit',
+            device: 'web' /*web, mobile, tablet*/ ,
+            uniqValue: '',
+            pageEncoding: 'utf-8'
+        });
+    </script>
+    
+    </div>
+    
+    <!-- AceCounter Log Gathering Script End -->
+</body>
+
+</html>
